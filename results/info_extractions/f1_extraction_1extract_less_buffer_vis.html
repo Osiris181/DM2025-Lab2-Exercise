@@ -1,0 +1,241 @@
+<style>
+.lx-highlight { position: relative; border-radius:3px; padding:1px 2px;}
+.lx-highlight .lx-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  background: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 4px;
+  padding: 6px 8px;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  max-width: 240px;
+  white-space: normal;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.lx-highlight:hover .lx-tooltip { visibility: visible; opacity:1; }
+.lx-animated-wrapper { max-width: 100%; font-family: Arial, sans-serif; }
+.lx-controls {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 8px;
+  padding: 12px; margin-bottom: 16px;
+}
+.lx-button-row {
+  display: flex; justify-content: center; gap: 8px; margin-bottom: 12px;
+}
+.lx-control-btn {
+  background: #4285f4; color: white; border: none; border-radius: 4px;
+  padding: 8px 16px; cursor: pointer; font-size: 13px; font-weight: 500;
+  transition: background-color 0.2s;
+}
+.lx-control-btn:hover { background: #3367d6; }
+.lx-progress-container {
+  margin-bottom: 8px;
+}
+.lx-progress-slider {
+  width: 100%; margin: 0; appearance: none; height: 6px;
+  background: #ddd; border-radius: 3px; outline: none;
+}
+.lx-progress-slider::-webkit-slider-thumb {
+  appearance: none; width: 18px; height: 18px; background: #4285f4;
+  border-radius: 50%; cursor: pointer;
+}
+.lx-progress-slider::-moz-range-thumb {
+  width: 18px; height: 18px; background: #4285f4; border-radius: 50%;
+  cursor: pointer; border: none;
+}
+.lx-status-text {
+  text-align: center; font-size: 12px; color: #666; margin-top: 4px;
+}
+.lx-text-window {
+  font-family: monospace; white-space: pre-wrap; border: 1px solid #90caf9;
+  padding: 12px; max-height: 260px; overflow-y: auto; margin-bottom: 12px;
+  line-height: 1.6;
+}
+.lx-attributes-panel {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 6px;
+  padding: 8px 10px; margin-top: 8px; font-size: 13px;
+}
+.lx-current-highlight {
+  border-bottom: 4px solid #ff4444;
+  font-weight: bold;
+  animation: lx-pulse 1s ease-in-out;
+}
+@keyframes lx-pulse {
+  0% { text-decoration-color: #ff4444; }
+  50% { text-decoration-color: #ff0000; }
+  100% { text-decoration-color: #ff4444; }
+}
+.lx-legend {
+  font-size: 12px; margin-bottom: 8px;
+  padding-bottom: 8px; border-bottom: 1px solid #e0e0e0;
+}
+.lx-label {
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-right: 4px;
+  color: #000;
+}
+.lx-attr-key {
+  font-weight: 600;
+  color: #1565c0;
+  letter-spacing: 0.3px;
+}
+.lx-attr-value {
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 0.2px;
+}
+
+/* Add optimizations with larger fonts and better readability for GIFs */
+.lx-gif-optimized .lx-text-window { font-size: 16px; line-height: 1.8; }
+.lx-gif-optimized .lx-attributes-panel { font-size: 15px; }
+.lx-gif-optimized .lx-current-highlight { text-decoration-thickness: 4px; }
+</style>
+    <div class="lx-animated-wrapper lx-gif-optimized">
+      <div class="lx-attributes-panel">
+        <div class="lx-legend">Highlights Legend: <span class="lx-label" style="background-color:#D2E3FC;">audience_impact</span> <span class="lx-label" style="background-color:#C8E6C9;">character</span> <span class="lx-label" style="background-color:#FEF0C3;">opinion_statement</span></div>
+        <div id="attributesContainer"></div>
+      </div>
+      <div class="lx-text-window" id="textWindow">
+        **Page 1**
+&quot;&quot;&quot;
+RUSH (2013) - Ron Howard: The
+Auteur of Conflict
+Film Review and Analysis
+Director: Ron Howard
+I believe Ron Howard, the acclaimed director behind the 2013 motorsports drama Rush, to be <span class="lx-highlight lx-current-highlight" data-idx="0" style="background-color:#FEF0C3;">a
+masterful auteur of real-life, high-stakes rivalry and psychological contrast</span>. <span class="lx-highlight" data-idx="1" style="background-color:#FEF0C3;">He excels at taking true
+historical events and dissecting them through the precise lens of opposing personalities</span>, consis-
+<span class="lx-highlight" data-idx="2" style="background-color:#FEF0C3;">tently making the human conflict as visceral and compelling as the physical action itself</span>. Howard’s
+signature is <span class="lx-highlight" data-idx="3" style="background-color:#FEF0C3;">the intellectual examination of how contrasting character traits—chaos versus con-
+trol—navigate gargantuan, often life-threatening, situations</span>.
+His signature style, evident in films like Apollo 13 and A Beautiful Mind, consistently sets <span class="lx-highlight" data-idx="4" style="background-color:#C8E6C9;">hyper-
+dedicated, intelligent characters</span> against impossible odds. He is <span class="lx-highlight" data-idx="5" style="background-color:#FEF0C3;">artistically impressive</span> not just in
+meticulously recreating history, but in <span class="lx-highlight" data-idx="6" style="background-color:#D2E3FC;">showing the audience how <span class="lx-highlight" data-idx="7" style="background-color:#C8E6C9;">the characters</span>’ deeply ingrained,
+and often flawed, personalities drive them to solve or confront life-or-death problems</span>. In Rush,
+<span class="lx-highlight" data-idx="8" style="background-color:#FEF0C3;">the ”gargantuan issue” is not merely winning the World Championship, but surviving the 1970s
+Formula 1 environment</span>, where safety was secondary to speed and every race carried a known
+percentage of mortality.
+This epic theme of <span class="lx-highlight" data-idx="9" style="background-color:#FEF0C3;">contrasting philosophies is perfectly distilled</span> in Rush, where Howard sets the
+story during the perilous 1976 Formula 1 season. The central conflict is the brutal battle for the
+World Championship between two legends: <span class="lx-highlight" data-idx="10" style="background-color:#C8E6C9;">Niki Lauda</span> (Daniel Brühl), the disciplined, pragmatic
+perfectionist, and <span class="lx-highlight" data-idx="11" style="background-color:#C8E6C9;">James Hunt</span> (Chris Hemsworth), the flamboyant, instinctual ”playboy.” The rivalry
+itself becomes a co-star in the narrative.
+Howard feeds his narrative mind opportunities to create intense character scenarios that define
+their opposition. He introduces <span class="lx-highlight" data-idx="12" style="background-color:#C8E6C9;">Lauda</span> as the meticulous, abrasive outsider who sees racing as a
+precise mathematical challenge, ruthlessly focused on efficiency and engineering. This is set in
+stark contrast against <span class="lx-highlight" data-idx="13" style="background-color:#C8E6C9;">Hunt</span>, the handsome daredevil who views the sport as a glorious, intoxicat-
+ing risk fuelled by raw instinct and a rock-star lifestyle. This core opposition highlights Howard’s
+recurring theme: <span class="lx-highlight" data-idx="14" style="background-color:#FEF0C3;">the necessity of both control and passion in achieving greatness</span>. Their antago-
+nism is not manufactured; it is a fundamental clash of worldviews.
+<span class="lx-highlight" data-idx="15" style="background-color:#FEF0C3;">This psychological layering increases the stakes far beyond the asphalt</span>. The greatest, and most dif-
+ficult, sequence is <span class="lx-highlight" data-idx="16" style="background-color:#FEF0C3;">Lauda’s catastrophic crash at the Nürburgring—a spectacular visual horror</span>—fol-
+lowed by <span class="lx-highlight" data-idx="17" style="background-color:#FEF0C3;">Howard’s meticulous detailing of his agonizing, six-week-long recovery</span>. This demon-
+strates the sheer, almost superhuman force of will required for his comeback. When <span class="lx-highlight" data-idx="18" style="background-color:#C8E6C9;">Lauda</span> returns,
+scarred and barely healed, Howard shows that the rivalry has transcended sport; it has become a
+necessary fuel for survival for both men. It transforms their relationship into one of mutual need
+and respect, forcing them to push each other to their absolute, fatal limits.
+Aesthetically, the film is <span class="lx-highlight" data-idx="19" style="background-color:#FEF0C3;">a triumph of technical filmmaking</span>. Cinematographer Anthony Dod Mantle
+uses a mix of high-speed photography, hand-held cameras, and stark lighting to <span class="lx-highlight" data-idx="20" style="background-color:#D2E3FC;">make the racing
+sequences <span class="lx-highlight" data-idx="21" style="background-color:#FEF0C3;">visceral, chaotic, and deafeningly loud</span></span>. This realism is <span class="lx-highlight" data-idx="22" style="background-color:#D2E3FC;">powerfully supported by Hans
+Zimmer’s <span class="lx-highlight" data-idx="23" style="background-color:#FEF0C3;">propulsive, epic orchestral score</span></span>. <span class="lx-highlight" data-idx="24" style="background-color:#FEF0C3;">The music is not merely background noise; it acts as
+a character</span>, <span class="lx-highlight" data-idx="25" style="background-color:#D2E3FC;">building the emotional pressure of the clock and the danger, setting the audience on
+the edge of their seat and ensuring the psychological stress felt by the drivers is mirrored by the
+audience’s physical reaction to the soundscape</span>.
+Overall, <span class="lx-highlight" data-idx="26" style="background-color:#FEF0C3;">Rush is a clear example of Howard’s auteur talent</span>, as he once again <span class="lx-highlight" data-idx="27" style="background-color:#D2E3FC;">dissects yet another
+cluster of real-world conditions (the rivalry, the speed, the risk of fire) for us to marvel at</span>. The film’s
+legacy lies not just in its <span class="lx-highlight" data-idx="28" style="background-color:#FEF0C3;">accurate portrayal of F1 history</span>, but in its <span class="lx-highlight" data-idx="29" style="background-color:#FEF0C3;">ability to articulate the terrifying
+ambition and internal control required to excel in a sport where the reward for victory is measured
+against the cost of one’s life</span>.
+&quot;&quot;&quot;
+
+
+      </div>
+      <div class="lx-controls">
+        <div class="lx-button-row">
+          <button class="lx-control-btn" onclick="playPause()">▶️ Play</button>
+          <button class="lx-control-btn" onclick="prevExtraction()">⏮ Previous</button>
+          <button class="lx-control-btn" onclick="nextExtraction()">⏭ Next</button>
+        </div>
+        <div class="lx-progress-container">
+          <input type="range" id="progressSlider" class="lx-progress-slider"
+                 min="0" max="29" value="0"
+                 onchange="jumpToExtraction(this.value)">
+        </div>
+        <div class="lx-status-text">
+          Entity <span id="entityInfo">1/30</span> |
+          Pos <span id="posInfo">[201-280]</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const extractions = [{"index": 0, "class": "opinion_statement", "text": "a masterful auteur of real-life, high-stakes rivalry and psychological contrast", "color": "#FEF0C3", "startPos": 201, "endPos": 280, "beforeText": " of Conflict\nFilm Review and Analysis\nDirector: Ron Howard\nI believe Ron Howard, the acclaimed director behind the 2013 motorsports drama Rush, to be ", "extractionText": "a\nmasterful auteur of real-life, high-stakes rivalry and psychological contrast", "afterText": ". He excels at taking true\nhistorical events and dissecting them through the precise lens of opposing personalities, consis-\ntently making the human c", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Ron Howard</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">masterful auteur</span>}</div>"}, {"index": 1, "class": "opinion_statement", "text": "He excels at taking true historical events and dissecting them through the precise lens of opposing personalities", "color": "#FEF0C3", "startPos": 282, "endPos": 395, "beforeText": "the acclaimed director behind the 2013 motorsports drama Rush, to be a\nmasterful auteur of real-life, high-stakes rivalry and psychological contrast. ", "extractionText": "He excels at taking true\nhistorical events and dissecting them through the precise lens of opposing personalities", "afterText": ", consis-\ntently making the human conflict as visceral and compelling as the physical action itself. Howard\u2019s\nsignature is the intellectual examinatio", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Ron Howard&#x27;s directing style</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">excels at dissecting events through opposing personalities</span>}</div>"}, {"index": 2, "class": "opinion_statement", "text": "consistently making the human conflict as visceral and compelling as the physical action itself", "color": "#FEF0C3", "startPos": 405, "endPos": 494, "beforeText": "nd psychological contrast. He excels at taking true\nhistorical events and dissecting them through the precise lens of opposing personalities, consis-\n", "extractionText": "tently making the human conflict as visceral and compelling as the physical action itself", "afterText": ". Howard\u2019s\nsignature is the intellectual examination of how contrasting character traits\u2014chaos versus con-\ntrol\u2014navigate gargantuan, often life-threat", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Ron Howard&#x27;s films</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">making human conflict visceral and compelling</span>}</div>"}, {"index": 3, "class": "opinion_statement", "text": "the intellectual examination of how contrasting character traits\u2014chaos versus con- trol\u2014navigate gargantuan, often life-threatening, situations", "color": "#FEF0C3", "startPos": 518, "endPos": 661, "beforeText": "s of opposing personalities, consis-\ntently making the human conflict as visceral and compelling as the physical action itself. Howard\u2019s\nsignature is ", "extractionText": "the intellectual examination of how contrasting character traits\u2014chaos versus con-\ntrol\u2014navigate gargantuan, often life-threatening, situations", "afterText": ".\nHis signature style, evident in films like Apollo 13 and A Beautiful Mind, consistently sets hyper-\ndedicated, intelligent characters against imposs", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Howard&#x27;s signature style</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">intellectual examination</span>}</div>"}, {"index": 4, "class": "character", "text": "hyper-dedicated, intelligent characters", "color": "#C8E6C9", "startPos": 756, "endPos": 796, "beforeText": "navigate gargantuan, often life-threatening, situations.\nHis signature style, evident in films like Apollo 13 and A Beautiful Mind, consistently sets ", "extractionText": "hyper-\ndedicated, intelligent characters", "afterText": " against impossible odds. He is artistically impressive not just in\nmeticulously recreating history, but in showing the audience how the characters\u2019 d", "attributesHtml": "<div><strong>class:</strong> character</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">primary_quality</span>: <span class=\"lx-attr-value\">hyper-dedicated, intelligent</span>}</div>"}, {"index": 5, "class": "opinion_statement", "text": "artistically impressive", "color": "#FEF0C3", "startPos": 828, "endPos": 851, "beforeText": "tyle, evident in films like Apollo 13 and A Beautiful Mind, consistently sets hyper-\ndedicated, intelligent characters against impossible odds. He is ", "extractionText": "artistically impressive", "afterText": " not just in\nmeticulously recreating history, but in showing the audience how the characters\u2019 deeply ingrained,\nand often flawed, personalities drive ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">artistically impressive</span>}</div>"}, {"index": 6, "class": "audience_impact", "text": "showing the audience how the characters\u2019 deeply ingrained, and often flawed, personalities drive them to solve or confront life-or-death problems", "color": "#D2E3FC", "startPos": 904, "endPos": 1049, "beforeText": "s hyper-\ndedicated, intelligent characters against impossible odds. He is artistically impressive not just in\nmeticulously recreating history, but in ", "extractionText": "showing the audience how the characters\u2019 deeply ingrained,\nand often flawed, personalities drive them to solve or confront life-or-death problems", "afterText": ". In Rush,\nthe \u201dgargantuan issue\u201d is not merely winning the World Championship, but surviving the 1970s\nFormula 1 environment, where safety was second", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">understanding, empathy</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">The characters&#x27; personalities</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the audience</span>}</div>"}, {"index": 7, "class": "character", "text": "the characters", "color": "#C8E6C9", "startPos": 929, "endPos": 943, "beforeText": "ligent characters against impossible odds. He is artistically impressive not just in\nmeticulously recreating history, but in showing the audience how ", "extractionText": "the characters", "afterText": "\u2019 deeply ingrained,\nand often flawed, personalities drive them to solve or confront life-or-death problems. In Rush,\nthe \u201dgargantuan issue\u201d is not mer", "attributesHtml": "<div><strong>class:</strong> character</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">primary_quality</span>: <span class=\"lx-attr-value\">deeply ingrained, and often flawed, personalities</span>}</div>"}, {"index": 8, "class": "opinion_statement", "text": "the \u201dgargantuan issue\u201d is not merely winning the World Championship, but surviving the 1970s Formula 1 environment", "color": "#FEF0C3", "startPos": 1060, "endPos": 1174, "beforeText": "g the audience how the characters\u2019 deeply ingrained,\nand often flawed, personalities drive them to solve or confront life-or-death problems. In Rush,\n", "extractionText": "the \u201dgargantuan issue\u201d is not merely winning the World Championship, but surviving the 1970s\nFormula 1 environment", "afterText": ", where safety was secondary to speed and every race carried a known\npercentage of mortality.\nThis epic theme of contrasting philosophies is perfectly", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The plot</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Neutral</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">gargantuan issue</span>}</div>"}, {"index": 9, "class": "opinion_statement", "text": "contrasting philosophies is perfectly distilled", "color": "#FEF0C3", "startPos": 1287, "endPos": 1334, "beforeText": "iving the 1970s\nFormula 1 environment, where safety was secondary to speed and every race carried a known\npercentage of mortality.\nThis epic theme of ", "extractionText": "contrasting philosophies is perfectly distilled", "afterText": " in Rush, where Howard sets the\nstory during the perilous 1976 Formula 1 season. The central conflict is the brutal battle for the\nWorld Championship ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The theme</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">perfectly distilled</span>}</div>"}, {"index": 10, "class": "character", "text": "Niki Lauda", "color": "#C8E6C9", "startPos": 1505, "endPos": 1515, "beforeText": "d sets the\nstory during the perilous 1976 Formula 1 season. The central conflict is the brutal battle for the\nWorld Championship between two legends: ", "extractionText": "Niki Lauda", "afterText": " (Daniel Br\u00fchl), the disciplined, pragmatic\nperfectionist, and James Hunt (Chris Hemsworth), the flamboyant, instinctual \u201dplayboy.\u201d The rivalry\nitself", "attributesHtml": "<div><strong>class:</strong> character</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">demeanor</span>: <span class=\"lx-attr-value\">disciplined, pragmatic</span>, <span class=\"lx-attr-key\">primary_quality</span>: <span class=\"lx-attr-value\">perfectionist</span>}</div>"}, {"index": 11, "class": "character", "text": "James Hunt", "color": "#C8E6C9", "startPos": 1578, "endPos": 1588, "beforeText": "onflict is the brutal battle for the\nWorld Championship between two legends: Niki Lauda (Daniel Br\u00fchl), the disciplined, pragmatic\nperfectionist, and ", "extractionText": "James Hunt", "afterText": " (Chris Hemsworth), the flamboyant, instinctual \u201dplayboy.\u201d The rivalry\nitself becomes a co-star in the narrative.\nHoward feeds his narrative mind oppo", "attributesHtml": "<div><strong>class:</strong> character</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">demeanor</span>: <span class=\"lx-attr-value\">flamboyant, instinctual</span>, <span class=\"lx-attr-key\">primary_quality</span>: <span class=\"lx-attr-value\">playboy</span>}</div>"}, {"index": 12, "class": "character", "text": "Lauda", "color": "#C8E6C9", "startPos": 1830, "endPos": 1835, "beforeText": "tar in the narrative.\nHoward feeds his narrative mind opportunities to create intense character scenarios that define\ntheir opposition. He introduces ", "extractionText": "Lauda", "afterText": " as the meticulous, abrasive outsider who sees racing as a\nprecise mathematical challenge, ruthlessly focused on efficiency and engineering. This is s", "attributesHtml": "<div><strong>class:</strong> character</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">demeanor</span>: <span class=\"lx-attr-value\">meticulous, abrasive</span>, <span class=\"lx-attr-key\">primary_quality</span>: <span class=\"lx-attr-value\">ruthlessly focused on efficiency and engineering</span>}</div>"}, {"index": 13, "class": "character", "text": "Hunt", "color": "#C8E6C9", "startPos": 2014, "endPos": 2018, "beforeText": "outsider who sees racing as a\nprecise mathematical challenge, ruthlessly focused on efficiency and engineering. This is set in\nstark contrast against ", "extractionText": "Hunt", "afterText": ", the handsome daredevil who views the sport as a glorious, intoxicat-\ning risk fuelled by raw instinct and a rock-star lifestyle. This core oppositio", "attributesHtml": "<div><strong>class:</strong> character</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">demeanor</span>: <span class=\"lx-attr-value\">handsome daredevil</span>, <span class=\"lx-attr-key\">primary_quality</span>: <span class=\"lx-attr-value\">raw instinct and a rock-star lifestyle</span>}</div>"}, {"index": 14, "class": "opinion_statement", "text": "the necessity of both control and passion in achieving greatness", "color": "#FEF0C3", "startPos": 2207, "endPos": 2271, "beforeText": "sport as a glorious, intoxicat-\ning risk fuelled by raw instinct and a rock-star lifestyle. This core opposition highlights Howard\u2019s\nrecurring theme: ", "extractionText": "the necessity of both control and passion in achieving greatness", "afterText": ". Their antago-\nnism is not manufactured; it is a fundamental clash of worldviews.\nThis psychological layering increases the stakes far beyond the asp", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Howard&#x27;s recurring theme</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">necessity of both control and passion</span>}</div>"}, {"index": 15, "class": "opinion_statement", "text": "This psychological layering increases the stakes far beyond the asphalt", "color": "#FEF0C3", "startPos": 2354, "endPos": 2425, "beforeText": "e: the necessity of both control and passion in achieving greatness. Their antago-\nnism is not manufactured; it is a fundamental clash of worldviews.\n", "extractionText": "This psychological layering increases the stakes far beyond the asphalt", "afterText": ". The greatest, and most dif-\nficult, sequence is Lauda\u2019s catastrophic crash at the N\u00fcrburgring\u2014a spectacular visual horror\u2014fol-\nlowed by Howard\u2019s met", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The psychological layering</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">increases the stakes</span>}</div>"}, {"index": 16, "class": "opinion_statement", "text": "Lauda\u2019s catastrophic crash at the N\u00fcrburgring\u2014a spectacular visual horror", "color": "#FEF0C3", "startPos": 2475, "endPos": 2548, "beforeText": "amental clash of worldviews.\nThis psychological layering increases the stakes far beyond the asphalt. The greatest, and most dif-\nficult, sequence is ", "extractionText": "Lauda\u2019s catastrophic crash at the N\u00fcrburgring\u2014a spectacular visual horror", "afterText": "\u2014fol-\nlowed by Howard\u2019s meticulous detailing of his agonizing, six-week-long recovery. This demon-\nstrates the sheer, almost superhuman force of will ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Lauda&#x27;s crash</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Negative</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">spectacular visual horror</span>}</div>"}, {"index": 17, "class": "opinion_statement", "text": "Howard\u2019s meticulous detailing of his agonizing, six-week-long recovery", "color": "#FEF0C3", "startPos": 2563, "endPos": 2633, "beforeText": " the asphalt. The greatest, and most dif-\nficult, sequence is Lauda\u2019s catastrophic crash at the N\u00fcrburgring\u2014a spectacular visual horror\u2014fol-\nlowed by ", "extractionText": "Howard\u2019s meticulous detailing of his agonizing, six-week-long recovery", "afterText": ". This demon-\nstrates the sheer, almost superhuman force of will required for his comeback. When Lauda returns,\nscarred and barely healed, Howard show", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Howard&#x27;s detailing of recovery</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">meticulous detailing</span>}</div>"}, {"index": 18, "class": "character", "text": "Lauda", "color": "#C8E6C9", "startPos": 2730, "endPos": 2735, "beforeText": "us detailing of his agonizing, six-week-long recovery. This demon-\nstrates the sheer, almost superhuman force of will required for his comeback. When ", "extractionText": "Lauda", "afterText": " returns,\nscarred and barely healed, Howard shows that the rivalry has transcended sport; it has become a\nnecessary fuel for survival for both men. It", "attributesHtml": "<div><strong>class:</strong> character</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotional_state</span>: <span class=\"lx-attr-value\">scarred and barely healed</span>, <span class=\"lx-attr-key\">demeanor</span>: <span class=\"lx-attr-value\">stoic</span>, <span class=\"lx-attr-key\">primary_quality</span>: <span class=\"lx-attr-value\">superhuman force of will</span>}</div>"}, {"index": 19, "class": "opinion_statement", "text": "a triumph of technical filmmaking", "color": "#FEF0C3", "startPos": 3045, "endPos": 3078, "beforeText": "s their relationship into one of mutual need\nand respect, forcing them to push each other to their absolute, fatal limits.\nAesthetically, the film is ", "extractionText": "a triumph of technical filmmaking", "afterText": ". Cinematographer Anthony Dod Mantle\nuses a mix of high-speed photography, hand-held cameras, and stark lighting to make the racing\nsequences visceral", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">triumph of technical filmmaking</span>}</div>"}, {"index": 20, "class": "audience_impact", "text": "make the racing sequences visceral, chaotic, and deafeningly loud", "color": "#D2E3FC", "startPos": 3194, "endPos": 3259, "beforeText": " a triumph of technical filmmaking. Cinematographer Anthony Dod Mantle\nuses a mix of high-speed photography, hand-held cameras, and stark lighting to ", "extractionText": "make the racing\nsequences visceral, chaotic, and deafeningly loud", "afterText": ". This realism is powerfully supported by Hans\nZimmer\u2019s propulsive, epic orchestral score. The music is not merely background noise; it acts as\na char", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">thrill, excitement, immersion</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">The mix of high-speed photography, hand-held cameras, and stark lighting</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the audience</span>}</div>"}, {"index": 21, "class": "opinion_statement", "text": "visceral, chaotic, and deafeningly loud", "color": "#FEF0C3", "startPos": 3220, "endPos": 3259, "beforeText": "lmmaking. Cinematographer Anthony Dod Mantle\nuses a mix of high-speed photography, hand-held cameras, and stark lighting to make the racing\nsequences ", "extractionText": "visceral, chaotic, and deafeningly loud", "afterText": ". This realism is powerfully supported by Hans\nZimmer\u2019s propulsive, epic orchestral score. The music is not merely background noise; it acts as\na char", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The racing sequences</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">visceral, chaotic, and deafeningly loud</span>}</div>"}, {"index": 22, "class": "audience_impact", "text": "powerfully supported by Hans Zimmer\u2019s propulsive, epic orchestral score", "color": "#D2E3FC", "startPos": 3277, "endPos": 3348, "beforeText": "f high-speed photography, hand-held cameras, and stark lighting to make the racing\nsequences visceral, chaotic, and deafeningly loud. This realism is ", "extractionText": "powerfully supported by Hans\nZimmer\u2019s propulsive, epic orchestral score", "afterText": ". The music is not merely background noise; it acts as\na character, building the emotional pressure of the clock and the danger, setting the audience ", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">heightened emotion, epic feeling</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">The score</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the audience</span>}</div>"}, {"index": 23, "class": "opinion_statement", "text": "propulsive, epic orchestral score", "color": "#FEF0C3", "startPos": 3315, "endPos": 3348, "beforeText": "meras, and stark lighting to make the racing\nsequences visceral, chaotic, and deafeningly loud. This realism is powerfully supported by Hans\nZimmer\u2019s ", "extractionText": "propulsive, epic orchestral score", "afterText": ". The music is not merely background noise; it acts as\na character, building the emotional pressure of the clock and the danger, setting the audience ", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The score</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">propulsive, epic</span>}</div>"}, {"index": 24, "class": "opinion_statement", "text": "The music is not merely background noise; it acts as a character", "color": "#FEF0C3", "startPos": 3350, "endPos": 3414, "beforeText": "he racing\nsequences visceral, chaotic, and deafeningly loud. This realism is powerfully supported by Hans\nZimmer\u2019s propulsive, epic orchestral score. ", "extractionText": "The music is not merely background noise; it acts as\na character", "afterText": ", building the emotional pressure of the clock and the danger, setting the audience on\nthe edge of their seat and ensuring the psychological stress fe", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The music</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">acts as a character</span>}</div>"}, {"index": 25, "class": "audience_impact", "text": "building the emotional pressure of the clock and the danger, setting the audience on the edge of their seat and ensuring the psychological stress felt by the drivers is mirrored by the audience\u2019s physical reaction to the soundscape", "color": "#D2E3FC", "startPos": 3416, "endPos": 3647, "beforeText": "realism is powerfully supported by Hans\nZimmer\u2019s propulsive, epic orchestral score. The music is not merely background noise; it acts as\na character, ", "extractionText": "building the emotional pressure of the clock and the danger, setting the audience on\nthe edge of their seat and ensuring the psychological stress felt by the drivers is mirrored by the\naudience\u2019s physical reaction to the soundscape", "afterText": ".\nOverall, Rush is a clear example of Howard\u2019s auteur talent, as he once again dissects yet another\ncluster of real-world conditions (the rivalry, the", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">pressure, danger, stress, physical reaction</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">The music</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">the audience</span>}</div>"}, {"index": 26, "class": "opinion_statement", "text": "Rush is a clear example of Howard\u2019s auteur talent", "color": "#FEF0C3", "startPos": 3658, "endPos": 3707, "beforeText": "e of their seat and ensuring the psychological stress felt by the drivers is mirrored by the\naudience\u2019s physical reaction to the soundscape.\nOverall, ", "extractionText": "Rush is a clear example of Howard\u2019s auteur talent", "afterText": ", as he once again dissects yet another\ncluster of real-world conditions (the rivalry, the speed, the risk of fire) for us to marvel at. The film\u2019s\nle", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">Rush</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">clear example of Howard\u2019s auteur talent</span>}</div>"}, {"index": 27, "class": "audience_impact", "text": "dissects yet another cluster of real-world conditions (the rivalry, the speed, the risk of fire) for us to marvel at", "color": "#D2E3FC", "startPos": 3726, "endPos": 3842, "beforeText": "ivers is mirrored by the\naudience\u2019s physical reaction to the soundscape.\nOverall, Rush is a clear example of Howard\u2019s auteur talent, as he once again ", "extractionText": "dissects yet another\ncluster of real-world conditions (the rivalry, the speed, the risk of fire) for us to marvel at", "afterText": ". The film\u2019s\nlegacy lies not just in its accurate portrayal of F1 history, but in its ability to articulate the terrifying\nambition and internal contr", "attributesHtml": "<div><strong>class:</strong> audience_impact</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotion_evoked</span>: <span class=\"lx-attr-value\">marvel</span>, <span class=\"lx-attr-key\">causal_element</span>: <span class=\"lx-attr-value\">Howard\u2019s dissection of real-world conditions</span>, <span class=\"lx-attr-key\">target_audience</span>: <span class=\"lx-attr-value\">us</span>}</div>"}, {"index": 28, "class": "opinion_statement", "text": "accurate portrayal of F1 history", "color": "#FEF0C3", "startPos": 3883, "endPos": 3915, "beforeText": "s yet another\ncluster of real-world conditions (the rivalry, the speed, the risk of fire) for us to marvel at. The film\u2019s\nlegacy lies not just in its ", "extractionText": "accurate portrayal of F1 history", "afterText": ", but in its ability to articulate the terrifying\nambition and internal control required to excel in a sport where the reward for victory is measured\n", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film&#x27;s legacy</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">accurate portrayal</span>}</div>"}, {"index": 29, "class": "opinion_statement", "text": "ability to articulate the terrifying ambition and internal control required to excel in a sport where the reward for victory is measured against the cost of one\u2019s life", "color": "#FEF0C3", "startPos": 3928, "endPos": 4095, "beforeText": "s (the rivalry, the speed, the risk of fire) for us to marvel at. The film\u2019s\nlegacy lies not just in its accurate portrayal of F1 history, but in its ", "extractionText": "ability to articulate the terrifying\nambition and internal control required to excel in a sport where the reward for victory is measured\nagainst the cost of one\u2019s life", "afterText": ".\n&quot;&quot;&quot;\n\n", "attributesHtml": "<div><strong>class:</strong> opinion_statement</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">subject</span>: <span class=\"lx-attr-value\">The film&#x27;s legacy</span>, <span class=\"lx-attr-key\">sentiment</span>: <span class=\"lx-attr-value\">Positive</span>, <span class=\"lx-attr-key\">key_phrase</span>: <span class=\"lx-attr-value\">terrifying ambition and internal control</span>}</div>"}];
+        let currentIndex = 0;
+        let isPlaying = false;
+        let animationInterval = null;
+        let animationSpeed = 1.0;
+
+        function updateDisplay() {
+          const extraction = extractions[currentIndex];
+          if (!extraction) return;
+
+          document.getElementById('attributesContainer').innerHTML = extraction.attributesHtml;
+          document.getElementById('entityInfo').textContent = (currentIndex + 1) + '/' + extractions.length;
+          document.getElementById('posInfo').textContent = '[' + extraction.startPos + '-' + extraction.endPos + ']';
+          document.getElementById('progressSlider').value = currentIndex;
+
+          const playBtn = document.querySelector('.lx-control-btn');
+          if (playBtn) playBtn.textContent = isPlaying ? '⏸ Pause' : '▶️ Play';
+
+          const prevHighlight = document.querySelector('.lx-text-window .lx-current-highlight');
+          if (prevHighlight) prevHighlight.classList.remove('lx-current-highlight');
+          const currentSpan = document.querySelector('.lx-text-window span[data-idx="' + currentIndex + '"]');
+          if (currentSpan) {
+            currentSpan.classList.add('lx-current-highlight');
+            currentSpan.scrollIntoView({block: 'center', behavior: 'smooth'});
+          }
+        }
+
+        function nextExtraction() {
+          currentIndex = (currentIndex + 1) % extractions.length;
+          updateDisplay();
+        }
+
+        function prevExtraction() {
+          currentIndex = (currentIndex - 1 + extractions.length) % extractions.length;
+          updateDisplay();
+        }
+
+        function jumpToExtraction(index) {
+          currentIndex = parseInt(index);
+          updateDisplay();
+        }
+
+        function playPause() {
+          if (isPlaying) {
+            clearInterval(animationInterval);
+            isPlaying = false;
+          } else {
+            animationInterval = setInterval(nextExtraction, animationSpeed * 1000);
+            isPlaying = true;
+          }
+          updateDisplay();
+        }
+
+        window.playPause = playPause;
+        window.nextExtraction = nextExtraction;
+        window.prevExtraction = prevExtraction;
+        window.jumpToExtraction = jumpToExtraction;
+
+        updateDisplay();
+      })();
+    </script>
